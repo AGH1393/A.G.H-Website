@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.G.H Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sarpanch:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            background: linear-gradient(to bottom right, #4468ff, #a63cb1, #ff445e);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        header {
+            background-color: #0e0e0e;
+            padding: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        nav a:hover, nav a.active {
+            background-color: #ddd;
+            color: red;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            flex: 1;
+        }
+        .content {
+            padding: 20px;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: none;
+            transition: all 0.3s ease;
+        }
+        .show {
+            display: block;
+        }
+        .rate-us, .feedback, .channels {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .rate-us button, .feedback button, .channels button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+        .rate-us button:hover, .feedback button:hover, .channels button:hover {
+            background-color: #555;
+        }
+        .feedback textarea {
+            width: 80%;
+            height: 100px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+        }
+        p {
+            font-family: 'Sarpanch', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to A.G.H Website!</h1>
+        <a href="#" class="download-app" onclick="alert('Sorry, the app version is not available at this time. Please try again later.'); return false;">Download the A.G.H App</a>
+    </header>
+
+    <nav>
+        <a href="#home-screen" onclick="showSection('home-screen', this)">Home</a>
+        <a href="#" onclick="showSection('merchandise', this)">Merchandise</a>
+        <a href="#" onclick="showSection('contact', this)">Contact Us</a>
+        <a href="#" onclick="showSection('about', this)">About A.G.H Website</a>
+        <a href="#" onclick="showSection('channels', this)">All Channels</a>
+        <a href="#" onclick="showSection('story', this)">About A.G.H</a>
+        <a href="#" onclick="toggleRateUs()">Rate Us</a>
+        <a href="#" onclick="showFeedback()">Feedback Us</a>
+    </nav>
+
+    <div class="container">
+        <section id="home-screen" class="content show">
+            <h2>Home Screen</h2>
+            <p>Welcome to A.G.H Website! Buy our merches, learn about games, and a lot more!</p>
+        </section>
+
+        <section id="merchandise" class="content">
+            <h2>Merchandise</h2>
+            <div class="merchandise-list">
+                <p>A.G.H Plush (coming soon!)</p>
+                <p>A.G.H Clothes (coming soon!)</p>
+                <p>A.G.H Stickers (coming soon!)</p>
+                <p>A.G.H Mug (coming soon!)</p>
+                <p>A.G.H Puzzle (coming soon!)</p>
+            </div>
+        </section>
+
+        <section id="contact" class="content">
+            <h2>Contact Us</h2>
+            <p>Phone Number: +98 998 170 3505</p>
+            <p>Email: <a href="mailto:A.G.H.2014.A.G.H@gmail.com">A.G.H.2014.A.G.H@gmail.com</a></p>
+        </section>
+
+        <section id="about" class="content">
+            <h2>About A.G.H Website</h2>
+            <p>We made this website for better access to everything about A.G.H merchs, channels, DIY, About us, and a way to contact me!</p>
+        </section>
+
+        <section id="channels" class="content">
+            <h2>All Channels</h2>
+            <button onclick="window.open('https://www.youtube.com/@Armin.Gamer.Hacker', '_blank')">YouTube Channel</button>
+            <button onclick="window.open('https://www.aparat.com/Armin.Gamer.Hacker', '_blank')">Aparat Channel</button>
+            <button onclick="window.open('https://www.instagram.com/agh13_93', '_blank')">Instagram Page</button>
+        </section>
+
+        <section id="story" class="content">
+            <h2>Story of A.G.H</h2>
+            <p>Hello! I'm A.K, the maker of A.G.H. I want to be a gamer, but a pharmacist too! My gaming character name is A.G.G, but in 2022, it changed to A.G.H. For a more storical and historical character, I made a country named O-M-G. A.G.H was a criminal, but now he is a S.W.A.T. For seeing A.G.H and more information, download the app!</p>
+        </section>
+    </div>
+
+    <div class="rate-us" id="rateUsSection">
+        <h2>Rate Us</h2>
+        <button onclick="rateWebsite(1)">Rate Us 1 Star</button>
+        <button onclick="rateWebsite(2)">Rate Us 2 Stars</button>
+        <button onclick="rateWebsite(3)">Rate Us 3 Stars</button>
+        <button onclick="rateWebsite(4)">Rate Us 4 Stars</button>
+        <button onclick="rateWebsite(5)">Rate Us 5 Stars</button>
+        <button onclick="toggleRateUs()">Cancel</button>
+    </div>
+
+    <div class="feedback" id="feedbackSection">
+        <h2>Feedback Us</h2>
+        <form id="feedbackForm" onsubmit="sendFeedback(); return false;">
+            <textarea id="feedbackText" name="feedbackText" placeholder="Write your feedback here..."></textarea>
+            <br>
+            <button type="submit">Send Feedback</button>
+            <button type="button" onclick="cancelFeedback()">Cancel</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 A.G.H Website. All rights reserved. Download app version for better performances and pictures and a lot more!</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            showSection('home-screen', document.querySelector('nav a[href="#home-screen"]'));
+            document.body.requestFullscreen(); // Request fullscreen mode on page load
+        };
+
+        function showSection(sectionId, navLink) {
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => {
+                section.classList.remove('show');
+            });
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('show');
+                selectedSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            if (navLink) {
+                navLink.classList.add('active');
+            }
+        }
+
+        function toggleRateUs() {
+            const rateUsSection = document.getElementById('rateUsSection');
+            rateUsSection.style.display = rateUsSection.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function showFeedback() {
+            const feedbackSection = document.getElementById('feedbackSection');
+            feedbackSection.style.display = 'block';
+        }
+
+        function sendFeedback() {
+            const feedbackText = document.getElementById('feedbackText').value.trim();
+            if (feedbackText === '') {
+                alert('Please enter your feedback before submitting.');
+                return;
+            }
+            alert('Thanks for your feedback!');
+            document.getElementById('feedbackText').value = '';
+            cancelFeedback();
+        }
+
+        function cancelFeedback() {
+            const feedbackSection = document.getElementById('feedbackSection');
+            feedbackSection.style.display = 'none';
+        }
+
+        function rateWebsite(stars) {
+            alert(`You rated this website ${stars} stars. Thank you for your feedback!`);
+            const rateUsSection = document.getElementById('rateUsSection');
+            rateUsSection.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
